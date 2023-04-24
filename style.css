@@ -1,0 +1,14 @@
+#imagen{
+    filter: contrast(2);
+    image-resolution:unset;
+    max-width: 100%;
+    height: 50%;
+}
+.fosfo-border {
+    box-shadow: 0 0 50px rgb(4, 41, 252);
+    height: 80%;
+    width: 50%;
+  }
+  
+ 
+  
