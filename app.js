@@ -17,7 +17,7 @@ worker.onmessage = function(event) {
       <p class="card-text">Types: ${pokemon.types.join(', ')}</p>
       <p class="card-text">Height: ${pokemon.height}</p>
       <p class="card-text">Weight: ${pokemon.weight}</p>
-      </div>
+      </div>    
       </div>
     `;
     api.appendChild(card);
