@@ -62,3 +62,10 @@ worker.onmessage = function(event) {
     api.appendChild(card);
   });
 };
+
+$(window).on('load', function () {
+  setTimeout(function () {
+$(".loader-page").css({visibility:"hidden",opacity:"0"})
+}, 2000);
+ 
+});
