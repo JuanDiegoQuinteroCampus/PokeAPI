@@ -5,7 +5,7 @@ const resultados = document.querySelector('#resultados')
 
 
 
-const worker = new Worker('./components/wsdata.js');
+const worker = new Worker('./components/wsdata.js', {type: "module"});
 worker.postMessage('start'); 
 worker.onmessage = function(event) {
 
