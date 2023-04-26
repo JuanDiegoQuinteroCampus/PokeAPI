@@ -16,3 +16,7 @@
   #formulario::placeholder {
     color: #fff
   }
+
+  .card:hover {
+    transform: scale(1.15) rotate(1deg);
+  }

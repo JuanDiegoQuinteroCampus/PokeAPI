@@ -16,11 +16,11 @@ worker.onmessage = function(event) {
     
     for(let data of pokemonData){
       let name = data.name;
-      if(name.indexOf(texto) !== -1){
+      if(name.indexOf(texto) !== -1){  //devuelve algo en especifico
         resultados.innerHTML += `
         <div class="justify-content-center">
         <div class="card m-3 text-center p-5 border-white bg-black text-light fosfo-border " style="width: 18rem;">
-        <img src="${data.imageUrl}" id="imagen" class="card-img-top" alt="${pokemon.name}">
+        <img src="${data.imageUrl}" id="imagen" class="card-img-top " alt="${pokemon.name}">
         <div class="card-body">
         <p class="card-text">ID: ${data.id}</p>
         <h3 class="card-title">${data.name}</h3>
