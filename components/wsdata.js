@@ -22,6 +22,7 @@ const allDataPokemon = async()=>{
     
     }; 
   
+    
 
     self.addEventListener('message', async function(event) {
       if (event.data === 'start') {

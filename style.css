@@ -8,7 +8,11 @@
     box-shadow: 0 0 50px rgb(4, 41, 252);
     height: 80%;
     width: 50%;
+    
+    
+    
   }
 
- 
-  
+  #formulario::placeholder {
+    color: #fff
+  }
