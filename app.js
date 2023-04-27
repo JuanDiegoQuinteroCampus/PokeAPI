@@ -3,13 +3,9 @@ const formulario = document.querySelector('#formulario')
 const boton = document.querySelector('#boton')
 const resultados = document.querySelector('#resultados')
 
-
-
 const worker = new Worker('./components/wsdata.js', {type: "module"});
 worker.postMessage('start'); 
 worker.onmessage = function(event) {
-
-
   const filtrar = () =>{
     resultados.innerHTML='';
     const texto =  formulario.value;
@@ -22,7 +18,7 @@ worker.onmessage = function(event) {
         <div class="card m-3 text-center p-5 border-white bg-black text-light fosfo-border " style="width: 18rem;">
         <img src="${data.imageUrl}" id="imagen" class="card-img-top " alt="${pokemon.name}">
         <div class="card-body">
-        <p class="card-text">ID: ${data.id}</p>
+        <p class="card-text">ID: #${data.id}</p>
         <h3 class="card-title">${data.name}</h3>
         <p class="card-text">Types: ${data.types.join(', ')}</p> 
         <p class="card-text">Height: ${data.height}</p>
@@ -38,20 +34,17 @@ worker.onmessage = function(event) {
   }
   
   boton.addEventListener('click', filtrar)
-  
-  
-
 
   const pokemonData = event.data;
   
   pokemonData.forEach(pokemon => {
     const card = document.createElement('div');
-    card.innerHTML = `
-      
+    card.innerHTML = ` 
       <div class="card m-3 text-center p-3 border-white bg-black text-light fosfo-border " style="width: 18rem;">
-      <img src="${pokemon.imageUrl}" id="imagen" class="card-img-top" alt="${pokemon.name}">
+      <div class="contenido w-75 mx-5 justify-content-center text-center" height="100">
+      <img src="${pokemon.imageUrl}" id="imagen" class="card-img-top " alt="${pokemon.name}"></div>
       <div class="card-body">
-      <p class="card-text">ID: ${pokemon.id}</p>
+      <p class="card-text">ID: #${pokemon.id}</p>
       <h3 class="card-title">${pokemon.name}</h3>
       <p class="card-text">Types: ${pokemon.types.join(', ')}</p>
       <p class="card-text">Height: ${pokemon.height}</p>
@@ -62,10 +55,10 @@ worker.onmessage = function(event) {
     api.appendChild(card);
   });
 };
-
 $(window).on('load', function () {
   setTimeout(function () {
 $(".loader-page").css({visibility:"hidden",opacity:"0"})
 }, 2000);
  
 });
+
